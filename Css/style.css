@@ -1,0 +1,981 @@
+/* ======== VARIABILE GLOBALE! ======== */
+:root {
+    --bg-color: #20063b;
+    --card-color: #2a0e4a;
+    --text-color: #f0f0f0;
+    --text-color-light: #aaa;
+    --accent-color: #f92582;
+    
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    --container-width: 1120px;
+}
+
+/* ======== STILURI DE BAZA! ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+    color: white;
+    font-weight: 700;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+p { color: var(--text-color-light); margin-bottom: 1rem; }
+a { text-decoration: none; color: var(--text-color); }
+ul { list-style: none; }
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    padding: 6rem 0 2rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    text-transform: uppercase;
+}
+
+/* ======== ANIMATII SCROLL! ======== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* MODIFICARE: Am eliminat proprietatile experimentale 'animation-timeline' */
+/* Acum, toate browserele vor folosi animatia simpla 'fadeInUp' o singura data. */
+.animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+
+/* ======== HEADER & NAVIGATIE! ======== */
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+}
+
+.nav-logo {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-logo span {
+    color: var(--accent-color);
+}
+
+.nav-button-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+/* Meniul mobil ascuns pe desktop! */
+.nav-toggle-checkbox,
+.nav-toggle-label {
+    display: none;
+}
+
+
+/* ======== BUTOANE! ======== */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid white;
+    border-radius: 50px;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: white;
+    color: var(--bg-color);
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button.button-outline {
+    background-color: transparent;
+    color: white;
+}
+
+.button.button-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.nav-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+}
+
+/* ======== SECTIUNEA HERO! ======== */
+.hero {
+    text-align: center;
+    padding-top: 6rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 6, 59, 0.7); 
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-content h1,
+.hero-content h3,
+.hero-content p {
+    color: #ffffff;
+}
+
+.hero h1 {
+    max-width: 1000px;
+    margin: 1rem auto;
+}
+.hero p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ======== CARDUL GENERIC! ======== */
+.card {
+    background-color: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ======== DESPRE MINE (INTRO)! ======== */
+/* Paragraful este full-width! */
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Uneltele mele! */
+.about-tools {
+    margin-top: 2.5rem;
+}
+.about-tools h4 {
+    margin-bottom: 1rem;
+}
+.about-tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.about-tools-list li {
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.about-tools-list li:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: var(--accent-color); 
+}
+
+
+/* Animatia WAVE (doar pe index)! */
+#sec2.about-intro .about-cards .card {
+    position: relative; 
+    overflow: hidden;   
+    z-index: 1;         
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+#sec2.about-intro .about-cards .card h4,
+#sec2.about-intro .about-cards .card p {
+    position: relative;
+    z-index: 3; 
+    transition: color 0.8s ease; 
+}
+
+#sec2.about-intro .about-cards .card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color); 
+    transform: translateY(100%); 
+    transition: transform 0.8s ease; 
+    z-index: 2; 
+}
+
+#sec2.about-intro .about-cards .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#sec2.about-intro .about-cards .card:hover::before {
+    transform: translateY(0); 
+}
+
+#sec2.about-intro .about-cards .card:hover h4,
+#sec2.about-intro .about-cards .card:hover p {
+    color: #ffffff; 
+}
+
+
+/* ======== SECTIUNEA PROIECTE! ======== */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.project-card {
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--card-color);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+.project-card:hover .project-info {
+    transform: translateY(0);
+}
+.project-info p {
+    color: var(--text-color-light);
+    margin-bottom: 0;
+}
+
+/* Link-ul "Find more"! */
+.section-link-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+.section-link-wrapper .button {
+    font-size: 1.1rem;
+    background: transparent;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+.section-link-wrapper .button:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+
+/* ======== SECTIUNEA CONTACT (2-COLOANE)! ======== */
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+}
+
+.cta-card {
+    text-align: center;
+    padding: 3rem; 
+    background-color: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cta-card h2 {
+    margin-bottom: 1rem;
+}
+.cta-card p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: var(--text-color-light);
+}
+.cta-card .button {
+    background: white;
+    color: var(--bg-color);
+    /* MODIFICARE: Am sters 'border-color: white;' (era redundant) */
+}
+.cta-card .button:hover {
+    background: var(--accent-color);
+    /* MODIFICARE: Am sters 'border-color: var(--accent-color);' */
+    color: white;
+    transform: scale(1.05);
+}
+
+
+/* ============================================== */
+/* ======== PAGINI SECUNDARE! ======== */
+/* ============================================== */
+
+.contact-page-body {
+    background-color: var(--bg-color);
+}
+
+/* ======== PAGINA PORTOFOLIU! ======== */
+.portfolio-header-text {
+    margin-bottom: 4rem; 
+}
+.hobbies-section-header {
+    margin-top: 6rem; 
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--card-color);
+}
+.hobbies-section-header p {
+    color: var(--text-color-light);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+/* ======== PAGINA CONTACT! ======== */
+.contact-form-title,
+.contact-cards-title {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+}
+.contact-form-title h2,
+.contact-cards-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 4rem;
+}
+.contact-form-main label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+.contact-form-main input,
+.contact-form-main textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.contact-form-main input:focus,
+.contact-form-main textarea:focus {
+    outline: none;
+    border-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.form-group-names {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.form-services-checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.form-services-checkboxes div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.form-services-checkboxes input[type="checkbox"] {
+    width: auto;
+    margin-bottom: 0;
+}
+.form-services-checkboxes label {
+    margin-bottom: 0;
+    color: var(--text-color-light);
+    font-weight: 400;
+}
+.contact-form-main .button {
+    width: 100%;
+    background: white;
+    color: var(--bg-color);
+    font-size: 1.1rem;
+}
+.contact-details h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+.contact-details p {
+    color: var(--text-color-light);
+    margin-bottom: 0.5rem;
+}
+.contact-details a {
+    color: white;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.contact-cards-section {
+    padding-top: 4rem;
+}
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* Cardurile de contact cu animatie de sus in jos! */
+.contact-card {
+    background-color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+    overflow: hidden;   
+    z-index: 1;
+}
+.contact-card i, .contact-card h4, .contact-card p, .contact-card a {
+    position: relative;
+    z-index: 3;
+    transition: color 0.8s ease, background-color 0.8s ease;
+}
+.contact-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    background-color: #fef0f5;
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.contact-card h4 {
+    color: #333;
+    font-size: 1.2rem;
+}
+.contact-card p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+.contact-card a {
+    color: var(--bg-color);
+    font-weight: 600;
+    text-decoration: underline;
+}
+/* Aici e animatia! */
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    transform: translateY(-100%); 
+    transition: transform 0.8s ease; 
+    z-index: 2;
+    border-radius: 12px;
+}
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.contact-card:hover::before {
+    transform: translateY(0); 
+}
+.contact-card:hover h4, .contact-card:hover p, .contact-card:hover a {
+    color: #ffffff;
+}
+.contact-card:hover i {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+
+/* ======== PAGINA ABOUT ME! ======== */
+.about-cv-section {
+    padding: 6rem 0 2rem;
+}
+.about-cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 3rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+.about-cv-image img {
+    width: 100%;
+    border-radius: 20px;
+    border: 3px solid var(--card-color);
+}
+.about-cv-details p {
+    color: var(--text-color-light);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.tab-radio {
+    display: none;
+}
+/* Tab-urile in sine! */
+.about-cv-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+    border-bottom: 2px solid var(--card-color);
+}
+.tab-btn-label {
+    background: transparent;
+    border: none;
+    color: var(--text-color-light);
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: var(--font-body);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.tab-btn-label i {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+.tab-btn-label::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+    transform-origin: center;
+}
+.tab-btn-label:hover {
+    color: white;
+}
+.tab-btn-label:hover i {
+    transform: scale(1.1) translateY(-2px);
+}
+.tab-pane {
+    display: none; 
+    animation: cssFadeIn 0.5s ease forwards;
+}
+@keyframes cssFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Magia tab-urilor CSS! */
+#tab-btn-skills:checked ~ .about-cv-tabs [for="tab-btn-skills"],
+#tab-btn-education:checked ~ .about-cv-tabs [for="tab-btn-education"],
+#tab-btn-awards:checked ~ .about-cv-tabs [for="tab-btn-awards"],
+#tab-btn-activities:checked ~ .about-cv-tabs [for="tab-btn-activities"] {
+    color: white;
+}
+#tab-btn-skills:checked ~ .about-cv-tabs [for="tab-btn-skills"]::after,
+#tab-btn-education:checked ~ .about-cv-tabs [for="tab-btn-education"]::after,
+#tab-btn-awards:checked ~ .about-cv-tabs [for="tab-btn-awards"]::after,
+#tab-btn-activities:checked ~ .about-cv-tabs [for="tab-btn-activities"]::after {
+    transform: scaleX(1);
+}
+#tab-btn-skills:checked ~ .about-cv-content #skills-pane,
+#tab-btn-education:checked ~ .about-cv-content #education-pane,
+#tab-btn-awards:checked ~ .about-cv-content #awards-pane,
+#tab-btn-activities:checked ~ .about-cv-content #activities-pane {
+    display: block;
+}
+/* Cardurile de skills! */
+.skill-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+.skill-card {
+    background: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.skill-card h4 {
+    color: var(--accent-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.skill-card h4 i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+.skill-card ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    color: var(--text-color-light);
+}
+.skill-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+/* Lista de educatie! */
+.education-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.education-item {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--card-color);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.education-item h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+.education-item p {
+    margin-bottom: 0.25rem;
+    color: var(--text-color-light);
+}
+.education-item .date {
+    display: block;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+.education-item ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-top: 1rem;
+}
+.education-item ul li {
+    color: var(--text-color-light);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+/* Lista de butoane (premii)! */
+.button-list {
+    list-style: none;
+    padding-left: 0;
+}
+.button-list li {
+    background: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color-light);
+    line-height: 1.7;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.8s ease; 
+}
+.button-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transform: translateX(-100%);
+    transition: transform 0.8s ease; 
+    z-index: -1;
+}
+.button-list li:hover {
+    color: var(--bg-color);
+}
+.button-list li:hover::before {
+    transform: translateX(0);
+}
+/* Sectiunea de proiecte din about! */
+.projects-section {
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--card-color);
+    margin-top: 4rem;
+}
+.projects-section .subtitle {
+    text-align: left;
+}
+.projects-section h2 {
+    text-align: left;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* ======== FOOTER-UL CU ICONITE! ======== */
+.footer-nou {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4rem; 
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    margin-bottom: 1.5rem;
+}
+.footer-links a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 2.5rem; 
+    transition: color 0.3s, transform 0.3s;
+}
+.footer-links a:hover {
+    color: white;
+    transform: scale(1.1) translateY(-5px); 
+}
+.copyright {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* ======== RESPONSIVE (MEDIA QUERIES)! ======== */
+
+@media (max-width: 1024px) {
+    /* Grile pe 2 coloane pe tableta! */
+    .work-grid,
+    .contact-cards-grid,
+    .about-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    
+    /* Iconita Hamburger! */
+    .nav-toggle-label {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        z-index: 1001; 
+    }
+    
+    .nav-toggle-checkbox {
+        display: none;
+    }
+
+    /* Meniul mobil (dropdown)! */
+    .nav-button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        
+        position: absolute;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+        
+        background: var(--bg-color);
+        padding-top: 6rem; 
+        
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        
+        z-index: 1000;
+    }
+    
+    /* Afisarea meniului mobil! */
+    .nav-toggle-checkbox:checked ~ .nav-button-group {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    /* Iconita X! */
+    .nav-toggle-checkbox:checked + .nav-toggle-label i::before {
+        content: '\eb59'; 
+    }
+    
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    /* Grile pe 1 coloana pe mobil! */
+    .work-grid,
+    .form-group,
+    .form-group-names,
+    .form-services-checkboxes,
+    .contact-cards-grid,
+    .about-cv-grid,
+    .skill-card-grid,
+    .about-cards,
+    .cta-grid { 
+        grid-template-columns: 1fr;
+    }
+    
+    /* Tab-urile de la About! */
+    .about-cv-tabs {
+        justify-content: center;
+    }
+    .tab-btn-label {
+        font-size: 1rem;
+        padding: 0.6rem 0.8rem;
+        gap: 0.4rem;
+    }
+    
+    .cta-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .about-tools-list li {
+        width: 60px;
+        height: 60px;
+        font-size: 2.2rem;
+    }
+    
+    /* Butoanele Hero pe mobil! */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    .hero-buttons .button {
+        width: 80%; 
+    }
+}

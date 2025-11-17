@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - LucaCys Portfolio</title>
+    <link rel="stylesheet" href="Css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="contact-page-body"> 
+    
+    <header class="header">
+    <nav class="nav container">
+        
+        <a href="home.html" class="nav-logo">LucaCys<span>.</span></a>
+        
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <i class='bx bx-menu'></i>
+        </label>
+        
+        <div class="nav-button-group">
+            <a href="home.html" class="button nav-button">Home</a>
+            <a href="about.html" class="button nav-button">About Me</a>
+            <a href="portofolio.html" class="button nav-button">My Projects</a>
+            <a href="contact.html" class="button nav-button">Contact</a>
+        </div>
+        
+    </nav>
+    </header>
+
+    <main>
+        <section class="about-cv-section" id="sec2">
+            <div class="container">
+                
+                <p class="subtitle">Who am I?</p>
+                <h2>About me</h2>
+
+                <div class="about-cv-grid">
+                    
+                    <div class="about-cv-image">
+                        <img src="Imagini/Luca.jpeg" alt="Luca Cismaru">
+                    </div>
+                    
+                    <div class="about-cv-details">
+                        
+                        <p>I am a dedicated student with a deep passion for mathematics and computer science, supported by extensive experience in both areas. I am continually exploring the intersection between practical applications and engineering research, striving to deliver thoughtful insights, innovative solutions, and real academic value.</p>
+
+                        <div class="tab-system-wrapper">
+                            
+                            <input type="radio" name="cv-tabs" id="tab-btn-education" class="tab-radio" checked>
+                            <input type="radio" name="cv-tabs" id="tab-btn-skills" class="tab-radio">
+                            <input type="radio" name="cv-tabs" id="tab-btn-awards" class="tab-radio">
+                            <input type="radio" name="cv-tabs" id="tab-btn-activities" class="tab-radio">
+
+                            <div class="about-cv-tabs">
+                                <label class="tab-btn-label" for="tab-btn-education"><i class='bx bxs-graduation'></i> Education</label>
+                                <label class="tab-btn-label" for="tab-btn-skills"><i class='bx bxs-component'></i> Skills</label>
+                                <label class="tab-btn-label" for="tab-btn-awards"><i class='bx bxs-trophy'></i> Awards</label>
+                                <label class="tab-btn-label" for="tab-btn-activities"><i class='bx bxs-joystick-alt'></i> Activities</label>
+                            </div>
+
+                            <div class="about-cv-content">
+                                
+                                <div class="tab-pane" id="skills-pane">
+                                    <div class="skill-card-grid">
+                                        
+                                        <div class="skill-card">
+                                            <h4><i class='bx bx-code-alt'></i> Programming Languages</h4>
+                                            <ul>
+                                                <li>C/C++</li>
+                                                <li>Python</li>
+                                                <li>MATLAB</li>
+                                                <li>SQL</li>
+                                                <li>HTML/CSS</li>
+                                                <li>JavaScript</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="skill-card">
+                                            <h4><i class='bx bxs-wrench'></i> Tools</h4>
+                                            <ul>
+                                                <li>Git</li>
+                                                <li>NumPy</li>
+                                                <li>Jupyter Notebooks</li>
+                                                <li>MATLAB Toolboxes</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="skill-card">
+                                            <h4><i class='bx bxs-book-content'></i> Libraries</h4>
+                                            <ul>
+                                                <li>Scikit-learn</li>
+                                                <li>Matplotlib</li>
+                                                <li>Pandas</li>
+                                                <li>NumPy</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="skill-card">
+                                            <h4><i class='bx bxs-star'></i> Abilities</h4>
+                                            <ul>
+                                                <li>English (B2)</li>
+                                                <li>Fast learner</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="education-pane">
+                                    <ul class="education-list">
+                                        <li class="education-item">
+                                            <h3>Faculty of Automatic Control and Computer Science</h3>
+                                            <p>POLITEHNICA University of Bucharest</p>
+                                            <p><em>Departament of Automatic Control, Applied Informatics and Intelligent Systems</em></p>
+                                            <span class="date">September 2024 - Present</span>
+                                            <p>Current GPA: 9.68/10</p>
+                                        </li>
+                                        <li class="education-item">
+                                            <h3>National College "Ion C. Brătianu" Piteşti</h3>
+                                            <p><em>Graduated from the Mathematics and Intensive Computer Science class</em></p>
+                                            <span class="date">September 2020 - July 2024</span>
+                                            <p>Overall GPA: 9.8/10</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-pane" id="awards-pane">
+                                    <ul class="button-list">
+                                        <li>1st Prize (national stages) and 2nd Prize (international stages) - Mathematics Competition "Arhimede"</li>
+                                        <li>1st Prize - "Dan Barbilian" Regional-level Mathematics Contest</li>
+                                        <li>Participation in the Advanced Mathematics for Engineers Contest "Traian Lalescu"</li>
+                                        <li>Participation in the Mechanics for Engineers Contest "Andrei Ioachimescu"</li>
+                                        <li>Multiple awards in national and regional math olympiads and competitions.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-pane" id="activities-pane">
+                                    <ul class="button-list">
+                                        <li>High School Robotics Team: Worked on programming, 3D printing, designing and building the robot.</li>
+                                        <li>Participated in the Scientific Communications Session: Led the mathematics and physics projects.</li>
+                                        <li>Science Festival: Participated in the Romanian Science Festival.</li>
+                                        <li>Quantum Computing: Completed a supplementary course on Quantum Computing at university.</li>
+                                        <li>Kaggle: Completed multiple Kaggle courses in Python, Machine Learning and Data Visualization.</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <p class="subtitle">My Work</p>
+                <h2>Research & Projects</h2>
+                
+                <ul class="education-list">
+                    
+                    <li class="education-item">
+                        <h3>Hello, welcome to my website!</h3>
+                        <p>Built a functional and visually appealing website using HTML and CSS.</p>
+                        <ul>
+                            <li>The site is fully functional and responsive across all pages and elements.</li>
+                            <li>The website is currently hosted locally.</li>
+                        </ul>
+                    </li>
+
+                    <li class="education-item">
+                        <h3>Simulating Game of Life</h3>
+                        <p>Developed a simulation of Conway's Game of Life, using various data structures & algorithms in C language.</p>
+                        <ul>
+                            <li>Implemented optimized update rules to handle large grids efficiently.</li>
+                            <li>Wrote efficient algorithms for extended problem statements while working with Linux and Git.</li>
+                        </ul>
+                    </li>
+
+                    <li class="education-item">
+                        <h3>Applications in the Method of Box-Counting and the Analysis of Fractal Dimensions</h3>
+                        <p>Presented the relationship between the box-counting method and fractal geometry through analytical examples.</p>
+                        <ul>
+                            <li>Built a visual system to illustrate the Julia set dynamically, based on parameters from the Mandelbrot set.</li>
+                            <li>Developed an interactive visualization of the Mandelbrot set highlighting its connection to corresponding Julia sets.</li>
+                        </ul>
+                    </li>
+
+                    <li class="education-item">
+                        <h3>The Effect of Undetermined Chaos The Butterfly Effect</h3>
+                        <p>Created a visual system based on a double pendulum to show chaotic motion.</p>
+                        <ul>
+                            <li>Simulated multiple pendulums moving simultaneously in different rotational paths.</li>
+                            <li>Illustrated the unpredictable behavior of nonlinear dynamics through synchronized motion.</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-nou">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/luca-cismaru-21b99b35a/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://github.com/lucacys27" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="mailto:lucacismaru96@gmail.com" aria-label="Email"><i class='bx bxs-envelope'></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 LucaCys. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

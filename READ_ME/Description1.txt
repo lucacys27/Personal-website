@@ -1,0 +1,20 @@
+Project Short Description
+Author: Cismaru Luca
+
+This document provides a brief overview of the implementation for the "Personal Website" project, which was built using only native HTML5 and CSS3, fully adhering to the project requirements.
+
+Project Structure & Design: The website consists of four fully-styled pages: Home (home.html), About Me (about.html), My Projects (portofolio.html), and Contact (contact.html). The design is modern, dark-themed, and consistent, utilizing a defined CSS variable palette for colors and fonts to ensure visual repetition and professionalism.
+
+Layout with CSS Grid & Flexbox: The core layout of the site relies heavily on modern CSS. CSS Grid was used to structure all major card-based sections (e.g., .work-grid, .about-cards, .cta-grid), while Flexbox was used for alignment in components like the navigation bar, footer, and within individual cards.
+
+100% Responsive Design: All four pages are fully responsive. Extensive use of @media queries (primarily targeting screens under 768px) ensures the content adapts perfectly to mobile devices. On mobile, all multi-column grids automatically stack into a single, scrollable column.
+
+CSS-Only Mobile Navigation: The mobile "hamburger" menu is a key feature implemented 100% with HTML and CSS, completely avoiding JavaScript. It uses the "checkbox hack," where a hidden checkbox and its <label> (the menu icon) are used to toggle the visibility of the navigation menu (.nav-button-group).
+
+Advanced CSS-Only Interactivity: The "About Me" page features a complex, interactive tab system (Education, Skills, etc.) also built purely with CSS. This uses the "radio button hack," where input: checked selectors are used to control which content pane (.tab-pane) is set to display: block.
+
+Code Validation: The entire project was thoroughly checked using the official W3C Validator for both HTML5 and CSS3. All pages and the master stylesheet successfully passed validation with no errors found. This confirms that the website's code is clean, well-formed, and adheres strictly to modern web standards, ensuring it is both aesthetically pleasing and technically correct.
+
+AI Assistance: The project's code structure and its final organization were refined with the help of Gemini AI. The AI also assisted in adding clear, descriptive comments in Romanian throughout the HTML and CSS files to improve code readability and maintainability. The AI helped with descriptions, comments and making sure the text sounds right in English!
+
+
